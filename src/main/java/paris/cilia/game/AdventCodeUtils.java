@@ -1,4 +1,7 @@
-package paris.cilia;
+package paris.cilia.game;
+
+import lombok.AccessLevel;
+import lombok.NoArgsConstructor;
 
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -9,11 +12,12 @@ import java.util.Scanner;
 import java.util.stream.IntStream;
 import java.util.stream.Stream;
 
+@NoArgsConstructor(access = AccessLevel.PRIVATE)
 public class AdventCodeUtils {
 
-    public static List<String> readInputByLine(int year, int day) throws FileNotFoundException {
+    public static List<String> readInputByLine(int day) throws FileNotFoundException {
         ClassLoader classLoader = AdventCodeUtils.class.getClassLoader();
-        String path = String.join("/", String.valueOf(year), String.valueOf(day), "input.txt");
+        String path = String.join("/", String.valueOf(day), "input.txt");
         File file = new File(Objects.requireNonNull(classLoader.getResource(path)).getFile());
         Scanner input = new Scanner(file);
         List<String> result = new LinkedList<>();

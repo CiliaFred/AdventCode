@@ -1,26 +1,25 @@
-package paris.cilia.days;
+package paris.cilia.game.days;
 
-import org.junit.jupiter.api.BeforeEach;
-import paris.cilia.AdventCodeTest;
-import paris.cilia.AdventCodeTestImpl;
-import paris.cilia.AdventCodeUtils;
+import paris.cilia.game.AdventCodeGame;
+import paris.cilia.game.AdventCodeGameImpl;
+import paris.cilia.game.AdventCodeUtils;
 
+import java.io.FileNotFoundException;
 import java.util.concurrent.atomic.AtomicInteger;
 
-class Day2Test extends AdventCodeTestImpl implements AdventCodeTest {
+public class Day2 extends AdventCodeGameImpl implements AdventCodeGame {
 
-    private final static int DAY = 2;
+    private static final int DAY = 2;
 
     private static final String FORWARD = "forward";
     private static final String DOWN = "down";
     private static final String SEPARATOR = " ";
 
-    @BeforeEach
-    public void init() throws Exception {
-        inputs = AdventCodeUtils.readInputByLine(YEAR, DAY);
+    public void init() throws FileNotFoundException {
+        inputs = AdventCodeUtils.readInputByLine(DAY);
     }
 
-    protected Integer processFirstStar() throws Exception {
+    protected Integer processFirstStar() {
         AtomicInteger position = new AtomicInteger(0);
         AtomicInteger depth = new AtomicInteger(0);
         inputs.forEach(line -> {
@@ -34,7 +33,7 @@ class Day2Test extends AdventCodeTestImpl implements AdventCodeTest {
         return position.get() * depth.get();
     }
 
-    protected Integer processSecondStar() throws Exception {
+    protected Integer processSecondStar() {
         AtomicInteger depth = new AtomicInteger(0);
         AtomicInteger position = new AtomicInteger(0);
         AtomicInteger aim = new AtomicInteger(0);

@@ -19,12 +19,12 @@ class Day8Test {
     @Test
     void firstStar() {
         game.firstStar();
-        Assertions.assertEquals(0, game.getResult());
+        Assertions.assertEquals(26L, game.getResult());
     }
 
     @Test
     void secondStar() {
         game.secondStar();
-        Assertions.assertEquals(0, game.getResult());
+        Assertions.assertEquals(61229L, game.getResult());
     }
 }

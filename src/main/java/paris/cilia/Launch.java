@@ -5,7 +5,7 @@ import paris.cilia.game.days.factory.DayFactory;
 
 public class Launch {
 
-    private static final int DAY = 11;
+    private static final int DAY = 12;
 
     public static void main(String[] args) {
         AdventCodeGame game = DayFactory.getGameByDay(DAY);

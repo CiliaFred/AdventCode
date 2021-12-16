@@ -8,6 +8,8 @@ import org.mockito.junit.jupiter.MockitoExtension;
 import paris.cilia.game.AdventCodeGameImpl;
 import paris.cilia.game.days.factory.DayFactory;
 
+import java.util.ArrayList;
+
 @ExtendWith(MockitoExtension.class)
 class Day16Test {
 
@@ -19,12 +21,12 @@ class Day16Test {
     @Test
     void firstStar() {
         game.firstStar();
-        Assertions.assertEquals(0, game.getResult());
+        Assertions.assertEquals(12, game.getResult());
     }
 
     @Test
     void secondStar() {
         game.secondStar();
-        Assertions.assertEquals(0, game.getResult());
+        Assertions.assertEquals(54, game.getResult());
     }
 }

@@ -3,6 +3,7 @@ package paris.cilia.game;
 import lombok.Getter;
 
 import java.io.FileNotFoundException;
+import java.util.Date;
 import java.util.List;
 
 public abstract class AdventCodeGameImpl implements AdventCodeGame {
@@ -26,6 +27,7 @@ public abstract class AdventCodeGameImpl implements AdventCodeGame {
     }
 
     public void firstStar() {
+        System.out.println("Start : " + new Date());
         try {
             init();
             result = processFirstStar();
@@ -33,9 +35,11 @@ public abstract class AdventCodeGameImpl implements AdventCodeGame {
             e.printStackTrace();
         }
         displayResult(">> First  *", result);
+        System.out.println("End : " + new Date());
     }
 
     public void secondStar() {
+        System.out.println("Start : " + new Date());
         try {
             init();
             result = processSecondStar();
@@ -43,6 +47,7 @@ public abstract class AdventCodeGameImpl implements AdventCodeGame {
             e.printStackTrace();
         }
         displayResult(">> Second *", result);
+        System.out.println("End : " + new Date());
     }
 
 }

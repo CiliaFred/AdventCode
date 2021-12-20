@@ -19,7 +19,7 @@ class Day19Test {
     @Test
     void firstStar() {
         game.firstStar();
-        Assertions.assertEquals(0, game.getResult());
+        Assertions.assertEquals(79, game.getResult());
     }
 
     @Test
